@@ -56,7 +56,7 @@ router.post("/update", authmiddleware, (req, res)=>{
         userId: req.userId,
         "todos._id": req.body.todoId
     },
-    {$set: {"todos.$.title": req.body.updatedTitle}})
+    {$set: {"todos.$.title": req.body.updatedTitle, "todos.$.priority": req.body.updatedPriority}})
     .then(()=>{
         return res.json({
             msg: "Todo Updated!"
