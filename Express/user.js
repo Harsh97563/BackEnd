@@ -24,7 +24,8 @@ router.post('/SignUp',async(req, res)=>{
         const zod = SignUp.safeParse(req.body)
         if(!zod.success){
            return res.json({
-                msg: 'zod'
+                msg: 'zod',
+                zod: zod
             })
         }
         const tempuser= await User.create({

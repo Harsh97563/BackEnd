@@ -8,7 +8,7 @@ const authmiddleware= require('../JWT/authmiddleware')
 router.post("/addtodo",authmiddleware, (req, res)=>{
     Todo.updateOne(
         {userId: req.userId},
-        {$push: {todos: {title: req.body.title}}}
+        {$push: {todos: {title: req.body.title, priority: req.body.priority}}}
     )
     .then(result => {
         res.json({

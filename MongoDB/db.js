@@ -18,6 +18,9 @@ const TodoSchema= new mongoose.Schema({
     todos:[{
         title:{
             type: String,
+        },
+        priority:{
+            type: String,
         }
 
     }]
